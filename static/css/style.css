@@ -1,0 +1,9 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p, h1, .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5%;
+}
