@@ -4,16 +4,16 @@ app.secret_key = 'keep it secret, keep it safe'
 
 @app.route('/')
 def index():
-    session['add_num'] = 0
-    if "add_num" not in session:
-        session['add_num'] = 0
-    else:
+    # session['add_num'] = 1
+    if "add_num" in session:
         session['add_num'] += 1
+    else:
+        session['add_num'] = 0
     return render_template("index.html")
 
 @app.route('/count', methods=['POST'])
 def click():
-    session['add_num'] = request.form['add']
+    session['add_num'] += int(request.form['add'])
     return redirect("/")
 
 @app.route('/reset', methods=['POST'])
@@ -24,7 +24,7 @@ def reset():
 
 @app.route('/plustwo', methods=['POST'])
 def plustwo():
-    session['add_num'] += 2
+    session['add_num'] += 1
     return redirect("/")
 
 if __name__ == "__main__":

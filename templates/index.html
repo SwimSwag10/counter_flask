@@ -13,9 +13,8 @@
   <hr class="mb-4">
   <p>You have visited the site: {{ session['add_num'] }}</p>
   <div class="buttons">
-    <form action="/count" method="post">
-      <input type="submit" value="Click" class="btn btn-primary" name="add">
-    </form>
+    <!-- this is to add one to the visits -->
+    <a href="/" class="btn btn-primary">Click</a>
     <form action="/reset" method="post">
       <input type="submit" value="Reset" class="btn btn-primary" name="reset">
     </form>
